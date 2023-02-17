@@ -8,7 +8,9 @@
     <!-- App Title -->
     <title>Rock Paper Game</title>
     <!-- External css -->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Fontsawesome kit -->
+    <script src="https://kit.fontawesome.com/7715d5600c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,15 +18,33 @@
     <!-- TODO: 1. Start game by pressing start game button. (start function start's the game and generates computer's choice)
         TODO: 2. Let user choose their choice and display the winner. (Genrate user's choice and compare user's and computer's choice and display the winner) -->
 
+    <div class="container">
+        <!-- Display choice here -->
+        <div class="display-choice-container">
+            <h3 class="display-choice computer-contaier">Computer choice:
+                <span id="computer-choice">
+                    <i class="fa-duotone fa-hand-scissors"></i>
+                </span>
+            </h3>
+            <h3 class="display-choice user-container hvr-float">Your choice:
+                <span id="your-choice">
+                    <i class="fa-duotone fa-hand"></i>
+                </span>
+            </h3>
+        </div>
 
-    <h2>Computer choice: <span id="computer-choice"></span> </h2>
-    <h2>Your choice: <span id="your-choice"></span> </h2>
-    <h2>Result: <span id="result"></span></h2>
+        <!-- Display result here -->
+        <div class="result-container">
+            <h2>Result: <span id="result"></span></h2>
+        </div>
 
-    <br>
-    <button class="btn" id="rock">Rock</button>
-    <button class="btn" id="paper">Paper</button>
-    <button class="btn" id="scissors">Scissors</button>
+        <!-- User choice from here -->
+        <div class="user-choice-container">
+            <button class="btn" id="rock">Rock</button>
+            <button class="btn" id="paper">Paper</button>
+            <button class="btn" id="scissors">Scissors</button>
+        </div>
+    </div>
 
     <!-- External JavaScript -->
     <script src="./app.js"></script>
