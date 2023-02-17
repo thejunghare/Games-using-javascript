@@ -9,8 +9,6 @@
     <title>Rock Paper Game</title>
     <!-- External css -->
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- Fontsawesome kit -->
-    <script src="https://kit.fontawesome.com/7715d5600c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,16 +19,20 @@
     <div class="container">
         <!-- Display choice here -->
         <div class="display-choice-container">
-            <h3 class="display-choice computer-contaier">Computer choice:
-                <span id="computer-choice">
-                    <i class="fa-duotone fa-hand-scissors"></i>
-                </span>
-            </h3>
-            <h3 class="display-choice user-container hvr-float">Your choice:
-                <span id="your-choice">
-                    <i class="fa-duotone fa-hand"></i>
-                </span>
-            </h3>
+            <div class="display-choice computer-contaier">
+                <a href="#" class="emoji">
+                    <span id="computer-choice">
+                        🫱
+                    </span>
+                </a>
+            </div>
+            <div class="display-choice user-container">
+                <a href="#" class="emoji">
+                    <span id="your-choice">
+                        🫲
+                    </span>
+                </a>
+            </div>
         </div>
 
         <!-- Display result here -->
@@ -40,14 +42,15 @@
 
         <!-- User choice from here -->
         <div class="user-choice-container">
-            <button class="btn" id="rock">Rock</button>
-            <button class="btn" id="paper">Paper</button>
-            <button class="btn" id="scissors">Scissors</button>
+            <button class="btn" id="✊">Rock ✊</button>
+            <button class="btn" id="🖐️">Paper 🖐️</button>
+            <button class="btn" id="✌️">Scissors ✌️</button>
         </div>
     </div>
 
     <!-- External JavaScript -->
     <script src="./app.js"></script>
+
 </body>
 
 </html>
