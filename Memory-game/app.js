@@ -51,9 +51,10 @@ const cardArray = [
 
 cardArray.sort(() => 0.5 - Math.random())
 const gridDisplay = document.querySelector('#grid')
+const resultDisplay = document.querySelector('#result')
 
-let cardChosen = []
-let cardChoosenId = []
+let cardsChosen = []
+let cardsChosenId = []
 const cardWon = []
 
 // creating game board
@@ -72,21 +73,38 @@ function checkMatch() {
     console.log('check for match')
 
     const card = document.querySelectorAll('#grid img')
+    const optionOneId = cardsChosenId[0]
+    const optionTwoId = cardsChosenId[1]
 
-    if (card )
-
-    if (cardChosen[0] == cardChosen[1]) {
-        alert('Matched')
-        card[cardChoosenId[0]].setAttribute('src', 'images/white.png')
-        card[cardChoosenId[0]].removeEventListener('click', flipCard)
-        card[cardChoosenId[1]].setAttribute('src', 'images/white.png')
-        card[cardChoosenId[1]].removeEventListener('click', flipCard)
-
-        cardWon.push(cardChosen)
+    if (optionOneId == optionTwoId) {
+        alert('You have clicked the same images')
+        card[optionOneId].setAttribute('src', 'images/blank.png')
+        card[optionOneId].setAttribute('src', 'images/blank.png')
+        alert('You have clicked the same image!')
     }
 
-    cardChosen = []
-    cardChoosenId = []
+    if (cardsChosen[0] === cardsChosen[1]) {
+        alert('Matched')
+        //        set the images to white if Matched
+        card[optionOneId].setAttribute('src', 'images/white.png')
+        card[optionTwoId].setAttribute('src', 'images/white.png')
+
+        //        removeEventListener
+        card[optionOneId].removeEventListener('click', flipCard)
+        card[optionTwoId].removeEventListener('click', flipCard)
+
+        cardWon.push(cardsChosen)
+    } else {
+        card[optionOneId].setAttribute('src', 'images/blank.png')
+        card[optionTwoId].setAttribute('src', 'images/blank.png')
+    }
+    cardsChosen = []
+    cardsChosenId = []
+    resultDisplay.textContent = cardWon.length
+
+    if (cardWon.length === cardArray.length / 2) {
+        resultDisplay.textContent = 'Congratulations you found them all'
+    }
 }
 
 // create flip effect
@@ -94,12 +112,12 @@ function flipCard() {
     console.log(cardArray)
     const cardId = this.getAttribute('data-id')
     console.log(cardArray[cardId].name)
-    cardChosen.push(cardArray[cardId].name)
-    cardChoosenId.push(cardId)
+    cardsChosen.push(cardArray[cardId].name)
+    cardsChosenId.push(cardId)
     console.log('clicked', cardId)
     this.setAttribute('src', cardArray[cardId].img)
 
-    if (cardChosen.length === 2) {
+    if (cardsChosen.length === 2) {
         setTimeout(checkMatch, 500)
     }
 }
