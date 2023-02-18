@@ -1,0 +1,19 @@
+.grid {
+    /* border: solid red 1px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:  wrap;
+    max-width: 41%;
+    margin: auto;
+}
+
+.square {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.mole {
+    background: red;
+}
