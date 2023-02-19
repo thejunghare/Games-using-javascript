@@ -8,6 +8,8 @@ const startButton = document.querySelector('#start-btn')
 
 let hitPosition
 let yourscore = 0
+let timeInterval = null
+
 
 function randomSquare() {
     // remove mole class from square
@@ -26,10 +28,13 @@ function randomSquare() {
     hitPosition = randomSquare.id
 }
 
+
 // start the counter and move the mole on click start
 startButton.addEventListener('click', function startCounter(params) {
     startCountDown(5)
     moveMole()
+
+
 })
 
 // 
@@ -44,9 +49,8 @@ squares.forEach(element => {
     })
 })
 
-function moveMole() {
-    let timeInterval = null
-    timeInterval = setInterval(randomSquare, 400)
+function moveMole() {  
+    timeInterval = setInterval(randomSquare, 600)
 }
 
 // 60 seconds counter
@@ -56,17 +60,29 @@ function startCountDown(seconds) {
     const interval = setInterval(() => {
         console.log(counter)
         counter--
-        if (counter < 0) {
+        if (counter <= 0) {
             clearInterval(interval)
-            alert('Ding! Time Out')
+            alert('Ding! Time Out, Your score is ' + yourscore)
+            // stop moving the mole
+            clearInterval(timeInterval )
+
+            squares.forEach(element=>{
+                element.classList.remove = 'mole'
+            })
 
         }
         displayTimeReaming.textContent = counter
     }, 1000)
 
+    if (counter < 0){
+       
+    }
 
 }
 
 function displayScore(){
     console.log('Displaying score')
 }
+
+
+stopMole()
