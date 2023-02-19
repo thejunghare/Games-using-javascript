@@ -17,11 +17,11 @@ body {
     margin-bottom: 10px;
 
     display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px; 
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 /* Grid styling */
@@ -49,7 +49,7 @@ body {
 }
 
 #start-btn {
-    padding: 0px  5px;
+    padding: 0px 5px;
     cursor: pointer;
 }
 
@@ -61,17 +61,17 @@ body {
     }
 
     .header {
-        /* border: 2px solid yellow; */
+        /* border: 2px solid blue; */
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: space-between;
-        height: 60px; 
+        height: 60px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
 
     .grid {
-        /* border: 2px solid red; */
+        /* border: 2px solid blue; */
         min-width: 98%;
         display: flex;
         flex-wrap: wrap;
@@ -81,5 +81,41 @@ body {
     .square {
         width: 100px;
         height: 80px;
+    }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    .grid {
+        /* border: 2px solid red; */
+        min-width: 80%;
+    }
+    .square {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+/* Media queries for Tablet ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .grid {
+        /* border: solid yellow 1px; */
+        min-width: 70%;
+    }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .grid {
+        /* border: solid green 1px; */
+        min-width: 60%;
+    }
+}
+
+/* Media query for large screens */
+@media (min-width: 1281px) {
+    .grid {
+        /* border: solid black 1px; */
+        min-width: 50%;
     }
 }
